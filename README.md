@@ -1,6 +1,7 @@
 <h1>TO DO  React App </h1>
 <h2>Get Started</h2>
 You can design of the app named design.png in the root folder
+The url of the deployed app is https://to-do-swart-five.vercel.app/
 After clone go the project directory, you can run:
 
 ### `npm install`
