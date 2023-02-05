@@ -66,7 +66,7 @@ function Tasks() {
             <div>
                 {uncompletedTasks.map((task, index) => (
                     <div className='flex items-center'>
-                        <div onClick={() => handleComplete(task.id)} className="flex w-full sm:flex-wrap justify-between bg-green-400 mb-2 p-4 rounded hover:border-blue-500 border" key={task.id}>
+                        <div onClick={() => handleComplete(task.id)} className="flex w-full sm:flex-wrap justify-between bg-green-200 mb-2 p-4 rounded hover:border-blue-500 border" key={task.id}>
                             <div className="flex sm:min-w-2/3">{task.task}</div>
                         </div>
                         <div className=''>
@@ -84,7 +84,7 @@ function Tasks() {
             <div>
                 {completedTasks.map((task, index) => (
                     <div className='flex items-center'>
-                        <div className='flex w-full bg-green-200 mb-2 p-4 hover:border-blue-500 border justify-between items-center' key={task.id} onClick={() => handleComplete(task.id)}>
+                        <div className='flex w-full bg-green-100 mb-2 p-4 hover:border-blue-500 border justify-between items-center' key={task.id} onClick={() => handleComplete(task.id)}>
                             {task.task}
 
                         </div>
