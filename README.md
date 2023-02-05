@@ -1,6 +1,7 @@
-# Getting Started with <h1>TO DO </h1> React App
+<h1>TO DO  React App </h1>
+<h2>Get Started</h2>
 
-after clone,in the project directory, you can run:
+After clone go the project directory, you can run:
 
 ### `npm install`
 
