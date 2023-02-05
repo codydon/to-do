@@ -7,9 +7,9 @@ import Swal from 'sweetalert2';
 import { DataContext } from '../App';
 
 export default function Home() {
-    const localData= useContext(DataContext);
+    const localData = useContext(DataContext);
     // const [tasks, setTasks] = useState([]);
-    function toggletheme(){
+    function toggletheme() {
         localData.setDarkM(!localData.darkM);
     }
     //adding a task
@@ -49,22 +49,26 @@ export default function Home() {
                         <h1 className="text-2xl font-bold">TODO</h1>
                     </div>
                     <div className='flex  gap-4'>
-                    
-                      <div>
-                        <button className="bg-black hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggletheme}
-                        >Mode</button>
+
+                        <div>
+                            <button className="bg-black hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggletheme}
+                            >light/dark</button>
+                        </div>
+                        <div>
+                           
+
                     </div>
                     <div>
                         <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={resetApp}
                         >RESET</button>
-                    </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
 
             <InputBar />
-            <Tasks   />
+            <Tasks />
 
             <div className='flex items-center justify-center mt-4'>
                 <p className='text-xs font-style: italic flex '>Made with &nbsp;<ImHeart color="#87CEEB" fontSize="1em" /> &nbsp; Don</p>

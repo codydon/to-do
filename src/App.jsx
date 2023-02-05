@@ -25,7 +25,7 @@ const App = () => {
 
         return {
           backgroundColor: "#2e3436",
-          color: "white"
+          color: "black"
         }
       } else {
         return {
@@ -38,10 +38,12 @@ const App = () => {
   }, [darkM])
 
   return (
-    <DataContext.Provider value={{ setData, data, loadData,  setDarkM, darkM}} >
+    <DataContext.Provider value={{ setData, data, loadData, setDarkM, darkM }} >
       <Router>
-        <div style={color} className="flex justify-center flex-col min-h-screen">
-          <Home />
+        <div style={color} className="min-h-screen md:pt-20">
+          <div className='lg:w-2/3 mx-auto items-center'>
+            <Home className="flex justify-center flex-col " />
+          </div>
         </div>
       </Router>
     </DataContext.Provider>
