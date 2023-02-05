@@ -71,7 +71,7 @@ export default function Home() {
             <Tasks />
 
             <div className='flex items-center justify-center mt-4'>
-                <p className='text-xs font-style: italic flex '>Made with &nbsp;<ImHeart color="#87CEEB" fontSize="1em" /> &nbsp; Don</p>
+                <p className='text-xs font-style: italic flex '>Made with &nbsp;<ImHeart color="#87CEEB" fontSize="1em" /> &nbsp; by Don</p>
             </div>
 
         </div>
