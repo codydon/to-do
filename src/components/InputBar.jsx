@@ -27,8 +27,6 @@ function InputBar(props) {
             localStorage.setItem('todos', JSON.stringify(tasks));
             setTask('');
             localData.setData(tasks, ...localData.data);
-
-            // window.location.reload();
         // }
     };
 
@@ -48,7 +46,7 @@ function InputBar(props) {
                     />
 
                     {/* //button for mobile and ipads */}
-                    <input type="submit" className="form-input text-white cursor-pointer bg-blue-500 h-10 rounded-r-lg px-5" value="Add" />
+                    <input type="submit" className="form-input text-white cursor-pointer bg-blue-500 h-10 rounded-r-lg px-5 lg:hidden xl:hidden 2xl:hidden" value="Add" />
                     </form>
             </div>
 
