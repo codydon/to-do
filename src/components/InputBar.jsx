@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
-const InputBar = ({ addTask }) => {
+function InputBar(props) {
+    // const [todos, setTodos] = useState([]);
     const [task, setTask] = useState('');
 
     const [selectedDate, setSelectedDate] = useState('not set');
@@ -19,10 +20,12 @@ const InputBar = ({ addTask }) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             if (!task) return;
-            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.push({ task, completed: false, date: selectedDate, time: selectedTime });
-            localStorage.setItem('tasks', JSON.stringify(tasks));
+            const tasks = JSON.parse(localStorage.getItem('todos')) || [];
+            const id = Date.now(); // generate a unique id
+            tasks.push({ id:id, task, completed: false, date: selectedDate, time: selectedTime });
+            localStorage.setItem('todos', JSON.stringify(tasks));
             setTask('');
+            // props.getData();
         }
     };
 
@@ -43,7 +46,7 @@ const InputBar = ({ addTask }) => {
 
             <div className='flex items-center'>
                 <div className=' items-center mr-2'>
-                    <span class="text-gray-600 mr-2">Duedate:</span>
+                    <span className="text-gray-600 mr-2">Duedate:</span>
                     <input
                         className="border border-gray-200 p-2"
                         type="date"
@@ -54,10 +57,10 @@ const InputBar = ({ addTask }) => {
                 </div>
 
 
-                <div class=" flex items-center">
-                    <span class="text-gray-600 mr-2">Due time:</span>
-                    <div class="relative">
-                        <input type="time" class="form-input bg-gray-200 focus:outline-none focus:bg-white border-2 border-gray-200 rounded-md p-2 appearance-none leading-normal" value={selectedTime}
+                <div className=" flex items-center">
+                    <span className="text-gray-600 mr-2">Due time:</span>
+                    <div className="relative">
+                        <input type="time" className="form-input bg-gray-200 focus:outline-none focus:bg-white border-2 border-gray-200 rounded-md p-2 appearance-none leading-normal" value={selectedTime}
                             onChange={handleTimeChange}
                         />
                     </div>

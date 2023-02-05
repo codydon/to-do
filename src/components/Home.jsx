@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputBar from './InputBar';
 import Tasks from './Tasks';
 import { ImHeart } from "react-icons/im";
@@ -7,12 +7,12 @@ import Swal from 'sweetalert2';
 
 export default function Home() {
 
-    const [tasks, setTasks] = useState([]);
+    // const [tasks, setTasks] = useState([]);
 
     //adding a task
-    const addTask = task => {
-        setTasks([task, ...tasks]);
-    };
+    // const addTask = task => {
+    //     setTasks([task, ...tasks]);
+    // };
 
     //resetting app to initial state
     const resetApp = () => {
@@ -36,7 +36,6 @@ export default function Home() {
         });
     };
 
-
     return (
         <div className='container mx-auto p-4'>
             <div className="">
@@ -53,12 +52,11 @@ export default function Home() {
             </div>
 
             <InputBar />
-            <Tasks />
+            <Tasks   />
 
             <div className='flex items-center justify-center mt-4'>
                 <p className='text-xs font-style: italic flex '>Made with &nbsp;<ImHeart color="#87CEEB" fontSize="1em" /> &nbsp; Don</p>
             </div>
-
 
         </div>
     );
