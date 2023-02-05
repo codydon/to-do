@@ -24,7 +24,7 @@ const App = () => {
       if (darkM) {
 
         return {
-          backgroundColor: "black",
+          backgroundColor: "#2e3436",
           color: "white"
         }
       } else {

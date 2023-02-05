@@ -43,15 +43,15 @@ export default function Home() {
     return (
         <div className='container mx-auto p-4'>
             <div className="">
-                <div className='flex justify-between'>
+                <div className='flex justify-evenly md:justify-between flex-wrap gap-2 mb-2'>
                     <div className='flex'>
                         <BiCheckSquare size={30} />
-                        <h1 className="text-2xl font-bold mb-4">TODO</h1>
+                        <h1 className="text-2xl font-bold">TODO</h1>
                     </div>
                     <div className='flex  gap-4'>
                     
                       <div>
-                        <button className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggletheme}
+                        <button className="bg-black hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggletheme}
                         >Mode</button>
                     </div>
                     <div>
