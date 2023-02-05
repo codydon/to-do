@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Getting Started with <h1>TO DO </h1> React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+after clone,in the project directory, you can run:
 
-## Available Scripts
-
-In the project directory, you can run:
+### `npm install`
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+#################################################################
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>1. How is React different from Angular?</h2>
+<ul>
+<li>
+Components are self-contained units that manage their own state and render their own view in React's component-based architecture. In contrast, Angular employs a Model-View-Controller (MVC) architecture, in which the model defines the data structure, the controller manages the data, and the view displays the data.
+</li>
+<li>
+React employs one-way data binding, which means that changes in a component's state are passed down to its children via properties. Angular, on the other hand, employs two-way data binding, in which model changes are automatically reflected in the view, and vice versa.
+</li>
+<li>
+React outperforms Angular in terms of performance thanks to its virtual DOM, which optimizes view updates. Angular, on the other hand, has a more complex architecture that can have an impact on performance.
+</li>
+<ul>
+<h2>2. What is the virtual DOM?</h2>
+<ul>
+<li>
+The virtual DOM (Document Object Model) is a lightweight in-memory representation of the actual DOM that React uses to update the view efficiently.When the state of a React component changes, the virtual DOM is updated rather than the actual DOM.React then uses a process known as "reconciliation" to compare the virtual DOM to the actual DOM and determine what changes need to be made.It reduces the number of changes that must be made to the DOM, resulting in faster and more efficient view updates. 
+</li>
+</ul>
+<h2>3. What are props in React?</h2>
+<ul>
+<li>
+props refer to a method of transmitting data from a parent component to a child component. Props are used to provide a child component with the data it requires to render its view.
+</li>
+</ul>
+<h2>4. What are the differences between state and props?</h2>
+<ul>
+<li>
+Props are used to pass data from a parent component to a child component and are read only, whereas state is used to store data that is specific to a component and can change over time. Props and state are both used to manage and update data in a component.
+</li>
+</ul>
+<h2>5. What do you understand by the term CORS?</h2>
+<ul>
+<li>
+CORS is a security mechanism that allows a web page to make cross-domain requests while maintaining the same-origin policy's security.It enables the server to control which requests are permitted and aids in the prevention of malicious requests from other domains.
+</li>
+</ul>
