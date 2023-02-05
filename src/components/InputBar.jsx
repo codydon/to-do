@@ -23,7 +23,7 @@ function InputBar(props) {
             if (!task) return;
             const tasks = JSON.parse(localStorage.getItem('todos')) || [];
             const id = Date.now(); // generate a unique id
-            tasks.push({ id: id, task, completed: false});
+            tasks.push({ id: id, task, completed: false, cid:Date.now()});
             localStorage.setItem('todos', JSON.stringify(tasks));
             setTask('');
             localData.setData(tasks, ...localData.data);
