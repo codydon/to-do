@@ -61,12 +61,12 @@ function Tasks() {
     return (
         <div className='container'>
             <div className='flex items-center justify-center'>
-                <h2 className="mb-2 bg-stone-300 w-20 text-center">My Tasks</h2>
+                <h2 className="mb-2 p- px-4 border-green-500 border-opacity-70 font-bold text-xl md:text-2xl border-b-4 text-center">My Tasks</h2>
             </div>
             <div>
                 {uncompletedTasks.map((task, index) => (
                     <div className='flex items-center'>
-                        <div onClick={() => handleComplete(task.id)} className="flex w-full sm:flex-wrap justify-between bg-green-200 mb-2 p-4 rounded hover:border-blue-500 border" key={task.id}>
+                        <div onClick={() => handleComplete(task.id)} className="flex capitalize w-full sm:flex-wrap justify-between bg-green-500 bg-opacity-70 mb-2 p-4 rounded hover:border-blue-500 border" key={task.id}>
                             <div className="flex sm:min-w-2/3">{task.task}</div>
                         </div>
                         <div className=''>
@@ -79,12 +79,12 @@ function Tasks() {
                 ))}
             </div>
             <div className='flex items-center justify-center'>
-                <h2 className="mb-2 bg-stone-300 w-20 text-center">Finished</h2>
+            <h2 className="mb-2 p- px-4 border-slate-500 font-bold text-xl md:text-2xl border-b-4 text-center">Finished</h2>
             </div>
             <div>
                 {completedTasks.map((task, index) => (
                     <div className='flex items-center'>
-                        <div className='flex w-full bg-green-100 mb-2 p-4 hover:border-blue-500 border justify-between items-center' key={task.id} onClick={() => handleComplete(task.id)}>
+                        <div className='flex capitalize w-full bg-slate-500 bg-opacity-50 mb-2 p-4 hover:border-blue-500 border justify-between items-center' key={task.id} onClick={() => handleComplete(task.id)}>
                             {task.task}
 
                         </div>
