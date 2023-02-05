@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import InputBar from './InputBar';
 import Tasks from './Tasks';
 import { ImHeart } from "react-icons/im";
 import { BiCheckSquare } from "react-icons/bi";
 import Swal from 'sweetalert2';
+import { DataContext } from '../App';
 
 export default function Home() {
-
+    const localData= useContext(DataContext);
     // const [tasks, setTasks] = useState([]);
-
+    function toggletheme(){
+        localData.setDarkM(!localData.darkM);
+    }
     //adding a task
     // const addTask = task => {
     //     setTasks([task, ...tasks]);
@@ -27,9 +30,10 @@ export default function Home() {
         }).then((result) => {
             if (result.value) {
                 localStorage.clear();
+                localData.loadData();
                 Swal.fire(
                     'RESET!',
-                    'The app has been reset',
+                    'Ttogglethemehe app has been reset',
                     'success'
                 );
             }
@@ -44,9 +48,17 @@ export default function Home() {
                         <BiCheckSquare size={30} />
                         <h1 className="text-2xl font-bold mb-4">TODO</h1>
                     </div>
+                    <div className='flex  gap-4'>
+                    
+                      <div>
+                        <button className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggletheme}
+                        >Mode</button>
+                    </div>
                     <div>
                         <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={resetApp}
                         >RESET</button>
+                    </div>
+
                     </div>
                 </div>
             </div>

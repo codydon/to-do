@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ImBin } from "react-icons/im";
 import { ImCheckmark } from "react-icons/im";
 import { Link } from 'react-router-dom';
+import { DataContext } from '../App';
 
 
-function Tasks(props) {
+function Tasks() {
+    const localData = useContext(DataContext);
+    const tasks=localData.data;
+    // const storedTasks = JSON.parse(localStorage.getItem("todos")) || [];
 
-    const storedTasks = JSON.parse(localStorage.getItem("todos")) || [];
+    // const [tasks, setTasks] = useState(storedTasks);
 
-    const [tasks, setTasks] = useState(storedTasks);
-
-    useEffect(() => {
-        setTasks(storedTasks);
-    }, [storedTasks]);
+    // useEffect(() => {
+    //     setTasks(storedTasks);
+    // }, [storedTasks]);
 
     const completedTasks = tasks.filter((task) => task.completed);
     const uncompletedTasks = tasks.filter((task) => !task.completed);
@@ -27,6 +29,7 @@ function Tasks(props) {
             return task;
         });
         localStorage.setItem("todos", JSON.stringify(updatedTasks));
+        localData.loadData();
     };
 
 
@@ -35,6 +38,7 @@ function Tasks(props) {
         const tasks = JSON.parse(localStorage.getItem("todos"));
         const updatedTasks = tasks.filter(task => task.id !== id);
         localStorage.setItem("todos", JSON.stringify(updatedTasks));
+        localData.loadData();
     };
 
 
@@ -46,13 +50,22 @@ function Tasks(props) {
             </div>
             <div>
                 {uncompletedTasks.map((task, index) => (
-                    <div onClick={() => handleComplete(task.id)} className="flex  justify-between bg-orange-100 mb-2 p-4 rounded" key={task.id}>
-                        <div> {task.task} time due: {task.time} date due: {task.date}
+                    <div onClick={() => handleComplete(task.id)} className="flex sm:flex-wrap justify-between bg-orange-100 mb-2 p-4 rounded hover:border-blue-500 border" key={task.id}>
+                        <div className="flex sm:min-w-2/3">{task.task}</div> 
+                        <div className="flex">
+                            <div className=''>Time due:</div>
+                            <div className=''>{task.time}</div>
                         </div>
-                        <div>{task.id}</div>
-                        <div className='flex'>
+                        <div className="flex">
+                            <div className=''>Date due:</div>
+                            <div className=''>{task.date}</div>
+                        </div>
+
+
+
+                        <div className=''>
                             <button onClick={() => handleDelete(task.id)} className="ml-4">
-                                <ImBin color="#DC2626" fontSize="2em" />
+                                <ImBin color="#DC2626" fontSize="1.7em" />
                             </button>
                         </div>
                     </div>
@@ -64,13 +77,13 @@ function Tasks(props) {
             </div>
             <div>
                 {completedTasks.map((task, index) => (
-                    <div className='flex bg-green-200 mb-2 p-4 rounded justify-between' key={task.id} onClick={() => handleComplete(task.id)}>
+                    <div className='flex bg-green-200 mb-2 p-4 hover:border-blue-500 border justify-between items-center' key={task.id} onClick={() => handleComplete(task.id)}>
                         <div className='' >
                             <div>{task.task}</div>
                         </div>
                         <div>
                             <button onClick={() => handleDelete(task.id)} className="ml-4">
-                                <ImBin color="#DC2626" fontSize="2em" />
+                                <ImBin color="#DC2626" fontSize="1.7em" />
                             </button>
                         </div>
                     </div>
